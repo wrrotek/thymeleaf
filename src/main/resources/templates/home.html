@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Produkty</title>
+</head>
+<body>
+<div class="header">
+    Kategorie:
+    <a href="/">Wszystkie</a>
+    <a href="/lista?kategoria=DOMOWE">Domowe</a>
+    <a href="/lista?kategoria=SPOZYWCZE">Spożywcze</a>
+    <a href="/lista?kategoria=BEAUTY">Beauty</a>
+</div>
+<div>
+    <h2>Dodawanie produktu</h2>
+
+    <form action="/add" method="post">
+
+        <div class="form-group">
+            <label for="productName">Nazwa</label>
+            <input type="text" class="form-control" id="productName" name="name" placeholder="Nazwa">
+        </div>
+
+        <div class="form-group">
+            <label>Kategoria</label>
+            <select id="inputCategory" class="form-control" name="category">
+                <option selected disabled>Wybierz...</option>
+                <option value="DOMOWE">Domowe</option>
+                <option value="DOMOWE">Spożywcze</option>
+                <option value="DOMOWE">Beauty</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Cena</label>
+            <input type="number" class="form-control" id="price" name="price" placeholder="Cena">
+        </div>
+        <input type="submit" value="Dodaj" class="btn btn-primary"/>
+
+    </form>
+
+<!--    <a href="/showAddingForm">Dodaj produkt</a>-->
+</div>
+</body>
+</html>
