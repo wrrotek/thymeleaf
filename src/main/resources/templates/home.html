@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Produkty</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 <div class="header">
     Kategorie:
-    <a href="/">Wszystkie</a>
+    <a href="/lista">Wszystkie</a>
     <a href="/lista?kategoria=DOMOWE">Domowe</a>
     <a href="/lista?kategoria=SPOZYWCZE">Spożywcze</a>
     <a href="/lista?kategoria=BEAUTY">Beauty</a>
 </div>
-<div>
+<div style="width: 500px; margin: 50px auto">
     <h2>Dodawanie produktu</h2>
 
     <form action="/add" method="post">
