@@ -24,17 +24,17 @@ public class ProductsController {
     }
 
     @GetMapping("lista")//lista?kategoria=spozywcze
-    public String showAllProducts(@RequestParam(value = "kategoria") Category category, Model model) {
+    public String showAllProducts(@RequestParam(value = "kategoria", required = false) Category category, Model model) {
 
-        List<Product> products = productsRepository.findByCategory(category);
-        model.addAttribute("productList", products);
+        List<Product> products;
+
 
         if (category != null) {
             products = productsRepository.findByCategory(category);
         } else {
             products = productsRepository.getAll();
         }
-
+        model.addAttribute("productList", products);
         double sum = 0;
         for (Product product : products) {
             sum += product.getPrice();
@@ -48,11 +48,5 @@ public class ProductsController {
         Product product = new Product(name, price, category);
         productsRepository.add(product);
         return "redirect:/lista";
-    }
-
-    @GetMapping("showAddingForm")
-    public String showAddingForm(Model model) {
-        model.addAttribute("product", new Product());
-        return "addingForm";
     }
 }
